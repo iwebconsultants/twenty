@@ -5,8 +5,8 @@ services:
     image: twentycrm/twenty:${TAG:-latest}
     volumes:
       - server-local-data:/app/packages/twenty-server/.local-storage
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
     environment:
       NODE_PORT: 3000
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
@@ -56,6 +56,9 @@ services:
       timeout: 5s
       retries: 20
     restart: always
+    networks:
+      - default
+      - dokploy-network
 
   worker:
     image: twentycrm/twenty:${TAG:-latest}
@@ -134,3 +137,8 @@ services:
 volumes:
   db-data:
   server-local-data:
+
+networks:
+  dokploy-network:
+    external: true
+
