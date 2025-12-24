@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { currentWorkspaceState } from '@/auth/states/currentWorkspaceState';
 import { FavoritesFolderContent } from '@/favorites/components/FavoritesFolderContent';
 import { useFavoritesByFolder } from '@/favorites/hooks/useFavoritesByFolder';
+import { MainNavigationDrawerBottomItems } from '@/navigation/components/MainNavigationDrawerBottomItems';
 import { MainNavigationDrawerFixedItems } from '@/navigation/components/MainNavigationDrawerFixedItems';
 import { MainNavigationDrawerScrollableItems } from '@/navigation/components/MainNavigationDrawerScrollableItems';
 import { NavigationDrawer } from '@/ui/navigation/navigation-drawer/components/NavigationDrawer';
@@ -38,6 +39,10 @@ export const MainNavigationDrawer = ({ className }: { className?: string }) => {
           <MainNavigationDrawerScrollableItems />
         )}
       </NavigationDrawerScrollableContent>
+
+      <NavigationDrawerFixedContent>
+        <MainNavigationDrawerBottomItems />
+      </NavigationDrawerFixedContent>
     </NavigationDrawer>
   );
 };
