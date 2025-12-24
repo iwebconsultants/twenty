@@ -226,6 +226,7 @@
       "packages/twenty-shared",
       "packages/twenty-sdk",
       "packages/twenty-apps",
+      "packages/twenty-apps/appointment-processor",
       "packages/twenty-cli",
       "packages/create-twenty-app",
       "tools/eslint-rules"
