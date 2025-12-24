@@ -1,4 +1,3 @@
-import { OBJECT_SETTINGS_WIDTH } from '@/settings/data-model/constants/ObjectSettings';
 import { useIsMobile } from '@/ui/utilities/responsive/hooks/useIsMobile';
 import { ScrollWrapper } from '@/ui/utilities/scroll/components/ScrollWrapper';
 import { useScrollRestoration } from '@/ui/utilities/scroll/hooks/useScrollRestoration';
@@ -23,7 +22,7 @@ const StyledSettingsPageContainer = styled.div<{
     if (useIsMobile()) {
       return 'unset';
     }
-    return OBJECT_SETTINGS_WIDTH + 'px';
+    return '100%';
   }};
   padding-bottom: ${({ theme }) => theme.spacing(20)};
 `;
